@@ -1,0 +1,85 @@
+/* RWD Handler */
+.js-media:before { content: ''; display: none }
+
+@media screen and (max-width: 640px) {
+.js-media:before { content: 'small' } }
+
+@media screen and (min-width: 1280px) {
+.js-media:before { content: 'large' } }
+
+@media screen and (-webkit-device-pixel-ratio: 2) {
+.js-media:after { content: 'x2' } }
+@media screen and (device-pixel-ratio: 2) {
+.js-media:after { content: 'x2' } }
+
+/* Clearfix by Nicolas Gallagher */
+p:before,
+p:after {
+    content: " ";
+    display: table;
+}
+p:after {
+    clear: both;
+}
+
+
+/* Styles */
+body {
+    padding: 0;
+    width: 80%;
+    margin: 0 auto;
+}
+
+hr {
+    margin-bottom: 2rem;
+}
+
+h1 {
+    text-align: center;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto 2rem;
+}
+
+p {
+    font-size: 2rem;
+    line-height: 1.5;
+}
+
+a {
+    display: block;
+    padding: 0.5rem 1rem;
+    background-color: #2d9fc5;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    -webkit-transition: all .1s;
+       -moz-transition: all .1s;
+            transition: all .1s;
+}
+a:active {
+    background-color: #006c90;
+    -webkit-transform: translateY(0.125rem);
+       -moz-transform: translateY(0.125rem);
+            transform: translateY(0.125rem);
+}
+
+p img {
+        position: relative;
+        top: 0.5rem;
+        width: 8rem;
+        height: auto;
+        float: left;
+        margin-bottom: 0;
+        margin-right: 2rem;
+    }
+
+@media only screen and (min-width: 640px) {
+    p img {
+        width: 20%;
+    }
+}
