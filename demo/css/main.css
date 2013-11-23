@@ -1,5 +1,6 @@
 /* RWD Handler */
 .js-media:before { content: ''; display: none }
+.js-media:after  { content: ''; display: none }
 
 @media screen and (max-width: 640px) {
 .js-media:before { content: 'small' } }
