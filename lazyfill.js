@@ -3,13 +3,10 @@ function Lazyfill() {
     this.mediaControl = $('.js-media');
 
     this.getPseudoProperty = function (el, context, property) {
-        var r = window.getComputedStyle(el, context).getPropertyValue(property).replace(/\"|\'/g, '');
-        return r;
+        return window.getComputedStyle(el, context).getPropertyValue(property).replace(/\"|\'/g, '');
     };
 
     this._getMediaCurrent = function (el) {
-        if (!el) { el = this.mediaControl; }
-
         var media = this.getPseudoProperty(el, ':before', 'content');
         var isRetina = this.getPseudoProperty(el, ':after', 'content');
 
@@ -44,7 +41,6 @@ function Lazyfill() {
                 }
 
                 changed = true;
-                // how to break a for?
 
                 // Provide also an [alt] attribute
                 var alt = el.getAttribute('data-alt');
@@ -70,7 +66,7 @@ function Lazyfill() {
 
     this._calculate = function () {
         // Get the images we want, assign the found media support
-        this._source2src($$('.js-lazyfill'), this._getMediaCurrent());
+        this._source2src($$('.js-lazyfill'), this._getMediaCurrent(this.mediaControl));
     };
 
     this.init = function () {
