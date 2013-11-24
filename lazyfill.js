@@ -16,9 +16,6 @@
             mediaControl = document.createElement('div');
             mediaControl.className = 'js-media';
             body.appendChild(mediaControl);
-
-            // Debug
-            console.info('[Lazyfill] INIT');
         }
 
         var els = document.querySelectorAll('.js-lazyfill');
@@ -57,13 +54,6 @@
             el.setAttribute('alt', alt);
 
             changed = true;
-        }
-
-        // Debug
-        if (changed && console.groupCollapsed) {
-            console.groupCollapsed('[Lazyfill]', 'Elements found:', els.length, 'Media is:', media);
-            console.table(els, ['src', 'alt', 'className']);
-            console.groupEnd();
         }
 
     };
