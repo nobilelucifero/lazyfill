@@ -59,13 +59,10 @@ This is the Lazyfill handler. It's up to the CSS to give the media support we ar
 
 ####The Javascript
 
-Very simple, we just need to initialize it.
+Nothing more than the library. Just include it the  HTML.
 
 ```javascript
-window.addEventListener('load', function(e) {
-    var lazyfill = new Lazyfill();
-    lazyfill.init();
-});
+<script src='lazyfill.js'></script>
 ```
 
 
@@ -73,24 +70,18 @@ window.addEventListener('load', function(e) {
 
 This table is somehow incomplete. I still didn't have the chance to test it on IE nor on Safari Mobile. I did a quick test on Android's stock browser and it seems to work fine.
 
-| Chrome | Firefox | IE | Safari |
-|:-------|:--------|:---|:-------|
-| 31     | 27      | ?  | 7      |
+| Chrome | Firefox | IE   | Safari |
+|:-------|:--------|:-----|:-------|
+| 31     | 27      | 9-10 | 5.1-7  |
 
-
-#####Requirements
-* [underscore.js](http://underscorejs.org) (uses `_.debounce()`).
-* the silly DOM selector I wrote (`$(), $$()`).
-
-I hope I'll be able to delete them one day. Anyway, if you use jQuery (or Zepto), just change `$$()` to `$()` and remove the related code. The same goes for underscore.js: if you don't use it, just delete the related function.
+**Note #1**: I do not intend to support IE8 at the moment. But if for you is a hit or miss, just tell me and I'll figure out something.
+**Note #2**: Safari 5.1 doesn't show all the console messages but it works. In the future anyway I'll remove those messages.
 
 
 ##To Do
-* **Remove** the automatic `resize` event and thus the related function. Is not something Lazyfiller should do. Probably I just need to expose the `_calculate` method.
 * **Remove** some debug code, clean the whole thing.
 * **Retina (HiDPI) support**: I still don't know how to implement it in a efficient way. Any suggestion is welcome.
 * **Add settings** or a way to customize it (?).
-* **Plugin**: create a plugin out ot this (?).
 
 
 ##Problems
