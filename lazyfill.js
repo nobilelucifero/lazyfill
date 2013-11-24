@@ -59,7 +59,7 @@ function Lazyfill() {
         // Debug
         if (loop()) {
             console.groupCollapsed('[Lazyfill]', 'Elements found:', els.length, 'Media is:', media);
-            console.table(els, ["src", "alt", "className"]);
+            console.table(els, ['src', 'alt', 'className']);
             console.groupEnd();
         }
     };
@@ -75,11 +75,11 @@ function Lazyfill() {
 
         if (!this.mediaControl) {
             // Define body and mediaControl
-            var body = document.querySelector("body"),
-                mediaControl = document.createElement("div");
+            var body = document.querySelector('body'),
+                mediaControl = document.createElement('div');
 
             // Assign a class
-            mediaControl.classList.add("js-media");
+            mediaControl.classList.add('js-media');
             // Append to the body
             body.appendChild(mediaControl);
 
