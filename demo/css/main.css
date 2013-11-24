@@ -1,3 +1,9 @@
+body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 /* RWD Handler */
 .js-media:before { content: ''; display: none }
 .js-media:after  { content: ''; display: none }
@@ -27,7 +33,6 @@ p:after {
 /* Styles */
 body {
     padding: 0;
-    width: 80%;
     margin: 0 auto;
 }
 
@@ -42,31 +47,17 @@ h1 {
 img {
     display: block;
     max-width: 100%;
-    margin: 0 auto 2rem;
+    margin: 0 auto 1.5rem;
 }
 
 p {
-    font-size: 2rem;
+    font-size: 1rem;
     line-height: 1.5;
+    margin: 0 auto 1.5rem;
 }
 
 a {
-    display: block;
-    padding: 0.5rem 1rem;
-    background-color: #2d9fc5;
-    color: #ffffff;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.5rem;
-    -webkit-transition: all .1s;
-       -moz-transition: all .1s;
-            transition: all .1s;
-}
-a:active {
-    background-color: #006c90;
-    -webkit-transform: translateY(0.125rem);
-       -moz-transform: translateY(0.125rem);
-            transform: translateY(0.125rem);
+    color: #2d9fc5;
 }
 
 p img {
@@ -76,11 +67,65 @@ p img {
         height: auto;
         float: left;
         margin-bottom: 0;
-        margin-right: 2rem;
+        margin-right: 1rem;
     }
 
 @media only screen and (min-width: 640px) {
     p img {
         width: 20%;
     }
+    p.multi {
+    -webkit-column-count: 2;
+       -moz-column-count: 2;
+            column-count: 2;
+    -webkit-column-gap: 1.5rem;
+       -moz-column-gap: 1.5rem;
+            column-gap: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    p.multi {
+    -webkit-column-count: 3;
+       -moz-column-count: 3;
+            column-count: 3;
+    }
+}
+
+
+.header,
+.main,
+.footer {
+    overflow: hidden;
+}
+
+.header {
+    background: #f5f5f5;
+}
+.main {
+    margin: auto;
+    max-width: 60rem;
+    padding: 3rem;
+}
+.footer a {
+    display: block;
+    padding: 3rem 1.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #2d9fc5;
+    -webkit-transition: all 0.1s;
+       -moz-transition: all 0.1s;
+            transition: all 0.1s;
+}
+.footer a:hover,
+.footer a:active {
+    background-color: #006c90;
+}
+.footer a:active {
+    -webkit-transform: translateY(0.25rem);
+       -moz-transform: translateY(0.25rem);
+            transform: translateY(0.25rem);
 }
