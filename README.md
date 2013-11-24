@@ -61,7 +61,7 @@ This is the Lazyfill handler. It's up to the CSS to give the media support we ar
 
 Nothing more than the library. Just include it the  HTML.
 
-```javascript
+```html
 <script src='lazyfill.js'></script>
 ```
 
@@ -74,8 +74,8 @@ This table is somehow incomplete. I still didn't have the chance to test it on I
 |:-------|:--------|:-----|:-------|
 | 31     | 27      | 9-10 | 5.1-7  |
 
-**Note #1**: I do not intend to support IE8 at the moment. But if for you is a hit or miss, just tell me and I'll figure out something.
-**Note #2**: Safari 5.1 doesn't show all the console messages but it works. In the future anyway I'll remove those messages.
+* **Note 1**: I do not intend to support IE8 at the moment. But if for you is a hit or miss, just tell me and I'll figure out something. A quick patch would be to add a second, following, image within some special IE comments.
+* **Note 2**: Safari 5.1 doesn't show all the console messages but it works. In the future anyway I'll remove those messages.
 
 
 ##To Do
