@@ -11,30 +11,24 @@
         var mediaControl = document.querySelector('.js-media');
 
         if (!mediaControl) {
-            var body = document.querySelector('body');
-
             mediaControl = document.createElement('div');
             mediaControl.className = 'js-media';
-            body.appendChild(mediaControl);
+            document.querySelector('body').appendChild(mediaControl);
         }
 
-        var els = document.querySelectorAll('.js-lazyfill');
+        var els   = document.querySelectorAll('.js-lazyfill');
         var media = getPseudoProperty(mediaControl, ':before', 'content');
-
         // If no media is provided, fallback on default
         if (media === '' || !media) { media = 'default'; }
 
         // Detect changes, false by default
         var changed = false;
-
         // Loop through all the found images
         for (var i = 0; i < els.length; i++) {
 
             var el       = els[i],
                 sources  = JSON.parse(el.getAttribute('data-sources')),
-                // extract the value from imageSet
                 src      = sources[media],
-                // Old src
                 srcOld   = el.getAttribute('src');
 
             if (!sources[media]) { src = sources['default']; }
@@ -48,9 +42,8 @@
 
             if (!alt) { alt = ''; }
 
-            // Set the [src] attribute
             el.setAttribute('src', src);
-            // Set alse the [alt] attribute, this avoid some flickering while setting [src]
+            // avoid some flickering while setting [src]
             el.setAttribute('alt', alt);
 
             changed = true;
